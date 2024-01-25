@@ -21,34 +21,37 @@
     <script type="module" crossorigin src="/goit-js-hw-10/assets/modulepreload-polyfill-ec808ebb.js"></script>
     <script type="module" crossorigin src="/goit-js-hw-10/assets/vendor-03f022f1.js"></script>
     <link rel="stylesheet" href="/goit-js-hw-10/assets/vendor-f90250d9.css">
-    <link rel="stylesheet" href="/goit-js-hw-10/assets/styles-5bd4f9aa.css">
+    <link rel="stylesheet" href="/goit-js-hw-10/assets/styles-d8a7d867.css">
   </head>
 
   <body>
     <p><a href="index.html">Go back</a></p>
 
-    <input type="text" id="datetime-picker" />
-    <button type="button" data-start>Start</button>
+    <div class="timer-container">
+      <div class="timer-set">
+        <input class="set-time" type="text" id="datetime-picker" />
+        <button class="start" type="button" data-start>Start</button>
+      </div>
 
-    <div class="timer">
-      <div class="field">
-        <span class="value" data-days>00</span>
-        <span class="label">Days</span>
-      </div>
-      <div class="field">
-        <span class="value" data-hours>00</span>
-        <span class="label">Hours</span>
-      </div>
-      <div class="field">
-        <span class="value" data-minutes>00</span>
-        <span class="label">Minutes</span>
-      </div>
-      <div class="field">
-        <span class="value" data-seconds>00</span>
-        <span class="label">Seconds</span>
+      <div class="timer">
+        <div class="field">
+          <span class="value" data-days>00</span>
+          <span class="label">DAYS</span>
+        </div>
+        <div class="field">
+          <span class="value" data-hours>00</span>
+          <span class="label">HOURS</span>
+        </div>
+        <div class="field">
+          <span class="value" data-minutes>00</span>
+          <span class="label">MINUTES</span>
+        </div>
+        <div class="field">
+          <span class="value" data-seconds>00</span>
+          <span class="label">SECONDS</span>
+        </div>
       </div>
     </div>
-
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="iziToast.min.js" type="text/javascript"></script>
     
