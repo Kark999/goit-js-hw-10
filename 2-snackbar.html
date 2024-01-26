@@ -13,12 +13,48 @@
     <title>2-snackbar</title>
 
     
-    <script type="module" crossorigin src="/goit-js-hw-10/assets/modulepreload-polyfill-ec808ebb.js"></script>
-    <link rel="stylesheet" href="/goit-js-hw-10/assets/styles-8df41299.css">
+    <script type="module" crossorigin src="/goit-js-hw-10/commonHelpers2.js"></script>
+    <link rel="modulepreload" crossorigin href="/goit-js-hw-10/assets/modulepreload-polyfill-ec808ebb.js">
+    <link rel="modulepreload" crossorigin href="/goit-js-hw-10/assets/vendor-651d7991.js">
+    <link rel="stylesheet" href="/goit-js-hw-10/assets/vendor-80d0dc0f.css">
+    <link rel="stylesheet" href="/goit-js-hw-10/assets/styles-60945105.css">
   </head>
 
   <body>
     <p><a href="index.html">Go back</a></p>
+
+    <form class="form">
+      <label class="input-label">
+        Delay (ms)
+        <input class="form input" type="number" name="delay" required />
+      </label>
+
+      <fieldset class="fieldset">
+        <legend class="fieldset-legend">State</legend>
+        <label class="fieldset-label">
+          <input
+            class="fieldset-btn"
+            type="radio"
+            name="state"
+            value="fulfilled"
+            required
+          />
+          Fulfilled
+        </label>
+        <label class="fieldset-label">
+          <input
+            class="fieldset-btn"
+            type="radio"
+            name="state"
+            value="rejected"
+            required
+          />
+          Rejected
+        </label>
+      </fieldset>
+
+      <button class="form-submit-btn" type="submit">Create notification</button>
+    </form>
 
     
   </body>
