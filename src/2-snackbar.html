@@ -18,6 +18,39 @@
   <body>
     <p><a href="index.html">Go back</a></p>
 
+    <form class="form">
+      <label class="input-label">
+        Delay (ms)
+        <input class="form input" type="number" name="delay" required />
+      </label>
+
+      <fieldset class="fieldset">
+        <legend class="fieldset-legend">State</legend>
+        <label class="fieldset-label">
+          <input
+            class="fieldset-btn"
+            type="radio"
+            name="state"
+            value="fulfilled"
+            required
+          />
+          Fulfilled
+        </label>
+        <label class="fieldset-label">
+          <input
+            class="fieldset-btn"
+            type="radio"
+            name="state"
+            value="rejected"
+            required
+          />
+          Rejected
+        </label>
+      </fieldset>
+
+      <button class="form-submit-btn" type="submit">Create notification</button>
+    </form>
+
     <script type="module" src="./js/2-snackbar.js"></script>
   </body>
 </html>
