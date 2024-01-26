@@ -1,7 +1,5 @@
 import flatpickr from 'flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
-import iziToast from 'izitoast';
-import 'izitoast/dist/css/izitoast.min.css';
 
 const startButton = document.querySelector('.start');
 const timerContainer = document.querySelector('.timer');
@@ -20,7 +18,23 @@ flatpickr('#datetime-picker', {
       startButton.disabled = true;
       iziToast.show({
         title: 'Error',
-        message: 'Illegal operation?',
+        message: 'Illegal operation',
+        class: 'error-message',
+        position: 'topCenter',
+        titleColor: '#ffffff',
+        titleSize: '16px',
+        titleLineHeight: '1.5',
+        messageColor: '#ffffff',
+        messageSize: '16px',
+        messageLineHeight: '1.5',
+        backgroundColor: '#ef4040',
+        icon: '',
+        iconText: '',
+        iconColor: '#ffffff',
+        iconUrl: '',
+        image: '',
+        imageWidth: 50,
+        timeout: 10000,
       });
     } else {
       startButton.disabled = false;
@@ -74,10 +88,6 @@ function startTimer() {
     if (timeDifference <= 0) {
       clearInterval(timerInterval);
       updateTimerDisplay({ days: 0, hours: 0, minutes: 0, seconds: 0 });
-      iziToast.success({
-        title: 'Countdown Complete',
-        message: 'The countdown timer has reached zero.',
-      });
     } else {
       const timeRemaining = convertMs(timeDifference);
       updateTimerDisplay(timeRemaining);
