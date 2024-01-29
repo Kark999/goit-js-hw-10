@@ -30,13 +30,9 @@ flatpickr('#datetime-picker', {
         messageSize: '16px',
         messageLineHeight: '1.5',
         backgroundColor: '#ef4040',
-        icon: '',
-        iconText: '',
-        iconColor: '#ffffff',
+                iconColor: '#ffffff',
         iconUrl: '../img/octagon.svg',
-        image: '',
-        imageWidth: 50,
-        timeout: 10000,
+        timeout: 5000,
         close: false,
         buttons: [
           [
