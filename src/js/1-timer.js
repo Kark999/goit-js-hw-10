@@ -1,5 +1,7 @@
 import flatpickr from 'flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
+import errorIcon from '../img/octagon.svg';
+import closeIcon from '../img/close.svg';
 
 const startButton = document.querySelector('.start');
 const timerContainer = document.querySelector('.timer');
@@ -17,8 +19,8 @@ flatpickr('#datetime-picker', {
     if (selectedDate < new Date()) {
       startButton.disabled = true;
       iziToast.show({
-        title: 'Error',
-        message: 'Illegal operation',
+        title: '',
+        message: 'Please choose a date in the future',
         class: 'error-message',
         position: 'topCenter',
         titleColor: '#ffffff',
@@ -31,10 +33,19 @@ flatpickr('#datetime-picker', {
         icon: '',
         iconText: '',
         iconColor: '#ffffff',
-        iconUrl: '',
+        iconUrl: '../img/octagon.svg',
         image: '',
         imageWidth: 50,
         timeout: 10000,
+        close: false,
+        buttons: [
+          [
+            `<button type="button" style="background-color: #EF4040" "display: flex"><img src=${closeIcon}></button>`,
+            function (instance, toast) {
+              instance.hide({ transitionOut: 'fadeOut' }, toast);
+            },
+          ],
+        ],
       });
     } else {
       startButton.disabled = false;
