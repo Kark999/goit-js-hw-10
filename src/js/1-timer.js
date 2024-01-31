@@ -32,11 +32,11 @@ flatpickr('#datetime-picker', {
         backgroundColor: '#ef4040',
         iconColor: '#ffffff',
         iconUrl: errorIcon,
-        timeout: 5000,
+        timeout: 0,
         close: false,
         buttons: [
           [
-            `<button type="button" style="background-color: #EF4040" "display: flex"><img src=${closeIcon}></button>`,
+            `<button type="button" style="background-color: #EF4040" ><img src=${closeIcon}></button>`,
             function (instance, toast) {
               instance.hide({ transitionOut: 'fadeOut' }, toast);
             },

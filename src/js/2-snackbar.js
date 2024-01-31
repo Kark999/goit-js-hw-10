@@ -26,7 +26,7 @@ document.addEventListener('submit', function (event) {
       iziToast.success({
         title: '',
         message: `Fulfilled promise in ${delay}ms`,
-        timeout: delay,
+        timeout: 0,
         class: 'ok-message-snackbar',
         position: 'topCenter',
         messageColor: '#ffffff',
@@ -34,11 +34,11 @@ document.addEventListener('submit', function (event) {
         messageLineHeight: '1.5',
         backgroundColor: '#59a10d',
         iconColor: '#ffffff',
-        iconUrl: '../img/ok.svg',
+        iconUrl: okIcon,
         close: false,
         buttons: [
           [
-            `<button type="button" style="background-color: #59a10d" "display: flex"><img src=${closeIcon}></button>`,
+            `<button type="button" style="background-color: #59a10d" ><img src=${closeIcon}></button>`,
             function (instance, toast) {
               instance.hide({ transitionOut: 'fadeOut' }, toast);
             },
@@ -57,12 +57,12 @@ document.addEventListener('submit', function (event) {
         messageLineHeight: '1.5',
         backgroundColor: '#ef4040',
         iconColor: '#ffffff',
-        iconUrl: '../img/octagon.svg',
-        timeout: delay,
+        iconUrl: errorIcon,
+        timeout: 0,
         close: false,
         buttons: [
           [
-            `<button type="button" style="background-color: #EF4040" "display: flex"><img src=${closeIcon}></button>`,
+            `<button type="button" style="background-color: #EF4040" ><img src=${closeIcon}></button>`,
             function (instance, toast) {
               instance.hide({ transitionOut: 'fadeOut' }, toast);
             },
