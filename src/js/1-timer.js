@@ -21,7 +21,7 @@ flatpickr('#datetime-picker', {
       iziToast.show({
         title: '',
         message: 'Please choose a date in the future',
-        class: 'error-message',
+        // class: 'error-message',
         position: 'topCenter',
         titleColor: '#ffffff',
         titleSize: '16px',
@@ -32,7 +32,7 @@ flatpickr('#datetime-picker', {
         backgroundColor: '#ef4040',
         iconColor: '#ffffff',
         iconUrl: errorIcon,
-        timeout: 0,
+        timeout: 5000,
         close: false,
         buttons: [
           [
