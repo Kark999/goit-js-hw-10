@@ -34,7 +34,7 @@ document.addEventListener('submit', function (event) {
         messageLineHeight: '1.5',
         backgroundColor: '#59a10d',
         iconColor: '#ffffff',
-        iconUrl: '../img/ok.svg',
+        iconUrl: '${okIcon}',
         close: false,
         buttons: [
           [
@@ -57,7 +57,7 @@ document.addEventListener('submit', function (event) {
         messageLineHeight: '1.5',
         backgroundColor: '#ef4040',
         iconColor: '#ffffff',
-        iconUrl: '../img/octagon.svg',
+        iconUrl: '${errorIcon}',
         timeout: delay,
         close: false,
         buttons: [
