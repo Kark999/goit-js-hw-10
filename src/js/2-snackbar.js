@@ -25,13 +25,12 @@ document.addEventListener('submit', function (event) {
     .then(delay => {
       iziToast.success({
         title: '',
-        message: `Fulfilled promise in ${delay}ms`,
+        message: `Fulfilled promise in ${delay} ms`,
         timeout: 0,
-        class: 'ok-message-snackbar',
+        // class: 'ok-message-snackbar',
         position: 'topCenter',
         messageColor: '#ffffff',
         messageSize: '16px',
-        messageLineHeight: '1.5',
         backgroundColor: '#59a10d',
         iconColor: '#ffffff',
         iconUrl: okIcon,
@@ -49,12 +48,11 @@ document.addEventListener('submit', function (event) {
     .catch(delay => {
       iziToast.error({
         title: '',
-        message: `Rejected promise in ${delay}ms`,
-        class: 'error-message-snackbar',
+        message: `Rejected promise in ${delay} ms`,
+        // class: 'error-message-snackbar',
         position: 'topCenter',
         messageColor: '#ffffff',
         messageSize: '16px',
-        messageLineHeight: '1.5',
         backgroundColor: '#ef4040',
         iconColor: '#ffffff',
         iconUrl: errorIcon,

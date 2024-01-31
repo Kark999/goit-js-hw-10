@@ -139,7 +139,7 @@ input {
   gap: 16px;
   position: absolute;
   top: 10%;
-  left: 20%;
+  left: 10%;
 }
 .input-label {
   display: flex;
