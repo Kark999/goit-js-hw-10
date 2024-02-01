@@ -14,11 +14,13 @@ document.addEventListener('submit', function (event) {
   const state = stateInput.value;
 
   const promise = new Promise((resolve, reject) => {
-    if (state === 'fulfilled') {
-      setTimeout(() => resolve(delay), delay);
-    } else {
-      setTimeout(() => reject(delay), delay);
-    }
+    setTimeout(() => {
+      if (state === 'fulfilled') {
+        resolve(delay);
+      } else {
+        reject(delay);
+      }
+    }, delay);
   });
 
   promise
@@ -66,5 +68,6 @@ document.addEventListener('submit', function (event) {
         ],
       });
     });
-  delayInput.value = '';
+  const form = document.querySelector('form');
+  form.reset();
 });

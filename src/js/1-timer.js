@@ -87,15 +87,20 @@ function updateTimerDisplay(time) {
 function startTimer() {
   startButton.disabled = true;
 
+  const initialTime = new Date(); // Отримання часу при запуску таймера
   const timerInterval = setInterval(function () {
-    const currentTime = new Date();
-    const timeDifference = userSelectedDate - currentTime;
+    const elapsedSeconds = Math.floor((new Date() - initialTime) / 1000); // Пройдені секунди
 
-    if (timeDifference <= 0) {
+    const timeDifference =
+      userSelectedDate - initialTime - elapsedSeconds * 1000;
+
+    const adjustedTimeDifference = Math.max(0, timeDifference); // Залишковий час у мілісекундах
+
+    if (adjustedTimeDifference <= 0) {
       clearInterval(timerInterval);
       updateTimerDisplay({ days: 0, hours: 0, minutes: 0, seconds: 0 });
     } else {
-      const timeRemaining = convertMs(timeDifference);
+      const timeRemaining = convertMs(adjustedTimeDifference);
       updateTimerDisplay(timeRemaining);
     }
   }, 1000);
