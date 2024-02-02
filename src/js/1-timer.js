@@ -11,7 +11,7 @@ let userSelectedDate;
 flatpickr('#datetime-picker', {
   enableTime: true,
   time_24hr: true,
-  defaultDate: new Date(),
+  defaultDate: Date.now(),
   minuteIncrement: 1,
   onClose: function (selectedDates) {
     const selectedDate = selectedDates[0];
@@ -87,9 +87,9 @@ function updateTimerDisplay(time) {
 function startTimer() {
   startButton.disabled = true;
 
-  const initialTime = new Date(); // Отримання часу при запуску таймера
+  const initialTime = Date.now(); // Отримання часу при запуску таймера
   const timerInterval = setInterval(function () {
-    const elapsedSeconds = Math.floor((new Date() - initialTime) / 1000); // Пройдені секунди
+    const elapsedSeconds = Math.floor((Date.now() - initialTime) / 1000); // Пройдені секунди
 
     const timeDifference =
       userSelectedDate - initialTime - elapsedSeconds * 1000;

@@ -4,14 +4,16 @@ import errorIcon from '../img/octagon.svg';
 import closeIcon from '../img/close.svg';
 import okIcon from '../img/ok.svg';
 
-document.addEventListener('submit', function (event) {
-  event.preventDefault();
+const form = document.querySelector('form');
 
-  const delayInput = document.querySelector('[name="delay"]');
-  const stateInput = document.querySelector('[name="state"]:checked');
+form.addEventListener('submit', function (e) {
+  e.preventDefault();
 
-  const delay = parseInt(delayInput.value);
-  const state = stateInput.value;
+  const nowDelay = document.querySelector('[name="delay"]');
+  const nowState = document.querySelector('[name="state"]:checked');
+
+  const delay = parseInt(nowDelay.value);
+  const state = nowState.value;
 
   const promise = new Promise((resolve, reject) => {
     setTimeout(() => {
@@ -68,6 +70,5 @@ document.addEventListener('submit', function (event) {
         ],
       });
     });
-  const form = document.querySelector('form');
   form.reset();
 });
